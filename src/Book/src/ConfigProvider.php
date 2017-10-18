@@ -17,7 +17,7 @@ class ConfigProvider
             MetadataMap::class => $this->getHalMetadataMap(),
             'authentication'   => require __DIR__ . '/../config/authentication.php',
             'dependencies'     => $this->getDependencies(),
-            'database'         => require __DIR__ . '/..config/database.php'
+            'database'         => require __DIR__ . '/../config/database.php'
         ];
     }
 
