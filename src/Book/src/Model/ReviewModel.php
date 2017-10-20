@@ -34,6 +34,17 @@ class ReviewModel
         if (! $review instanceof ReviewEntity) {
             throw Exception\ReviewNotFoundException::forReview($id);
         }
-        return $book;
+        return $review;
+    }
+
+    public function getReviewsByBook(string $book_id): array
+    {
+        $statement = $this->pdo->prepare(
+            'SELECT * FROM review WHERE book_id = :book_id'
+        );
+        $statement->execute([':book_id' => $book_id]);
+        $statement->setFetchMode(PdoService::FETCH_CLASS, ReviewEntity::class);
+
+        return $statement->fetchAll();
     }
 }

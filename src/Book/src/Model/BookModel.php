@@ -3,15 +3,17 @@ namespace Book\Model;
 
 use Book\Collection\BookCollection;
 use Book\Entity\BookEntity;
+use Book\Entity\ReviewEntity;
 use Book\Exception;
 use Book\PdoPaginator;
 use Book\PdoService;
 
 class BookModel
 {
-    public function __construct(PdoService $pdo)
+    public function __construct(PdoService $pdo, ReviewModel $reviewModel)
     {
         $this->pdo = $pdo;
+        $this->reviewModel = $reviewModel;
     }
 
     public function getAllBooks(): BookCollection

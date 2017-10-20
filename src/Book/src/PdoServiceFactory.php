@@ -15,7 +15,11 @@ class PdoServiceFactory
             );
         }
         try {
-            return new PdoService($db['dsn'], $db['user'], $db['password']);
+            return new PdoService(
+                $db['dsn'],
+                $db['user'] ?? null,
+                $db['password'] ?? null
+            );
         } catch (PDOException $e) {
             throw new Exception\RuntimeException(
                 'Error during the database connection'
