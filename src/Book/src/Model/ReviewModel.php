@@ -37,14 +37,18 @@ class ReviewModel
         return $review;
     }
 
-    public function getReviewsByBook(string $book_id): array
+    public function getReviewsByBook(string $book_id): ReviewCollection
     {
         $statement = $this->pdo->prepare(
             'SELECT * FROM review WHERE book_id = :book_id'
         );
-        $statement->execute([':book_id' => $book_id]);
-        $statement->setFetchMode(PdoService::FETCH_CLASS, ReviewEntity::class);
+        $countStatement = $this->pdo->prepare(
+            'SELECT COUNT(id) FROM review WHERE book_id = :book_id'
+        );
+        $countStatement->bindValue(':book_id', $book_id);
 
-        return $statement->fetchAll();
+        return new ReviewCollection(
+            new PdoPaginator($statement, $countStatement, [], ReviewEntity::class)
+        );
     }
 }
