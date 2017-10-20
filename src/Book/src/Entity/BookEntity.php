@@ -1,6 +1,8 @@
 <?php
 namespace Book\Entity;
 
+use Book\Collection\ReviewCollection;
+
 class BookEntity
 {
     /**
@@ -27,6 +29,11 @@ class BookEntity
      * @var int Number of book pages.
      */
     public $pages;
+
+    /**
+     * @var ReviewCollection Reviews related to this book.
+     */
+    public $reviews;
 
     /**
      * @var int Year of the book.
