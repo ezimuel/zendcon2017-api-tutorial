@@ -38,7 +38,7 @@ This tutorial provides the following APIs:
 }
 ```
 
-## PATCH /reviews/{id}
+### PATCH /reviews/{id}
 
 One or more of the following values:
 
