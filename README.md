@@ -51,7 +51,7 @@ One or more of the following values:
 ```
 
 **Note:** The POST and the PATCH actions require authentication, provided using
-[Basic Access Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication].
+[Basic Access Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication).
 We provided 3 users to test: `user1`, `user2` and `admin`. The first two are
 general users, the last one has an administrator role. The passwords of all the
 users is `password`.
