@@ -56,7 +56,6 @@ We provided 3 users to test: `user1`, `user2` and `admin`. The first two are
 general users, the last one has an administrator role. The passwords of all the
 users is `password`.
 
-```
 
 (C) Copyright 2017 by [Enrico Zimuel](https://www.zimuel.it/), [Rogue Wave Sofware](https://www.roguewave.com/)
 Inc.
