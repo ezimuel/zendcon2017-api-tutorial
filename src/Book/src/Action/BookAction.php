@@ -37,13 +37,16 @@ class BookAction implements MiddlewareInterface
         }
 
         $book = $this->book->getBook($id);
+        $book->reviews = $this->review->getReviewsByBook($id);
         $resource = $this->resourceGenerator->fromObject($book, $request);
 
-        $reviews = new HalResource($this->review->getReviewsByBook($id));
-        $author = $author->withLink(
-            new Link('self', '/reviews/' .  $reviews['id'])
-        );
-        $resource = $resource->embed('reviews', [$reviews]);
+        $linkGenerator = $this->resourceGenerator->getLinkGenerator();
+        $resource = $resource->withLink($linkGenerator->templatedFromRoute(
+            'reviews', // link relation
+            $request,
+            'review', // route
+            ['id' => $id] // route parameter subsitutions
+        ));
 
         // $resource = $resource->withLink($this->generateSearchLink(
         //     $this->resourceGenerator->getLinkGenerator(),
@@ -51,6 +54,5 @@ class BookAction implements MiddlewareInterface
         // ));
 
         return $this->responseFactory->createResponse($request, $resource);
-
     }
 }
