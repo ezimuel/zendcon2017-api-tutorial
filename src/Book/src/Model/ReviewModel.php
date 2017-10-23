@@ -1,7 +1,7 @@
 <?php
 namespace Book\Model;
 
-use Book\Collection\ArrayIterator;
+use Book\Collection\BookReviewCollection;
 use Book\Collection\ReviewCollection;
 use Book\Entity\ReviewEntity;
 use Book\Exception;
@@ -39,18 +39,16 @@ class ReviewModel
         return $review;
     }
 
-    public function getReviewsByBook(string $book_id): ReviewCollection
+    public function getReviewsByBook(string $book_id): BookReviewCollection
     {
         $statement = $this->pdo->prepare(
             'SELECT * FROM review WHERE book_id = :book_id'
         );
-        $countStatement = $this->pdo->prepare(
-            'SELECT COUNT(id) FROM review WHERE book_id = :book_id'
-        );
-        $countStatement->bindValue(':book_id', $book_id);
+        $statement->execute([':book_id' => $book_id]);
+        $statement->setFetchMode(PdoService::FETCH_CLASS, ReviewEntity::class);
 
-        return new ReviewCollection(
-            new PdoPaginator($statement, $countStatement, [], ReviewEntity::class)
+        return new BookReviewCollection(
+            $statement->fetchAll()
         );
     }
 
@@ -62,7 +60,7 @@ class ReviewModel
         $statement = $this->pdo->prepare(
             'INSERT INTO review (id, username, book_id, review, stars)
              VALUES (:id, :username, :book_id, :review, :stars)'
-         );
+        );
 
         try {
             $result = $statement->execute([

@@ -40,14 +40,6 @@ class BookAction implements MiddlewareInterface
         $book->reviews = $this->review->getReviewsByBook($id);
         $resource = $this->resourceGenerator->fromObject($book, $request);
 
-        $linkGenerator = $this->resourceGenerator->getLinkGenerator();
-        $resource = $resource->withLink($linkGenerator->templatedFromRoute(
-            'reviews', // link relation
-            $request,
-            'review', // route
-            ['id' => $id] // route parameter subsitutions
-        ));
-
         return $this->responseFactory->createResponse($request, $resource);
     }
 }

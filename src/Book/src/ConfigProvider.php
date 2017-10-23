@@ -47,6 +47,12 @@ class ConfigProvider
             ],
             [
                 '__class__' => RouteBasedCollectionMetadata::class,
+                'collection_class' => Collection\BookReviewCollection::class,
+                'collection_relation' => 'reviews',
+                'route' => 'reviews',
+            ],
+            [
+                '__class__' => RouteBasedCollectionMetadata::class,
                 'collection_class' => Collection\ReviewCollection::class,
                 'collection_relation' => 'reviews',
                 'route' => 'reviews',
