@@ -28,10 +28,6 @@ class AllReviewAction implements MiddlewareInterface
     {
         $reviews = $this->review->getAllReviews();
         $resource = $this->resourceGenerator->fromObject($reviews, $request);
-        // $resource = $resource->withLink($this->generateSearchLink(
-        //     $this->resourceGenerator->getLinkGenerator(),
-        //     $request
-        // ));
 
         return $this->responseFactory->createResponse($request, $resource);
 

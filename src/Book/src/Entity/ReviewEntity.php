@@ -9,9 +9,9 @@ class ReviewEntity
     public $id;
 
     /**
-     * @var string User Id of the review author
+     * @var string Username of the review author
      */
-    public $user_id;
+    public $username;
 
     /**
      * @var string Book Id of the book

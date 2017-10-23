@@ -28,10 +28,6 @@ class AllBookAction implements MiddlewareInterface
     {
         $books = $this->book->getAllBooks();
         $resource = $this->resourceGenerator->fromObject($books, $request);
-        // $resource = $resource->withLink($this->generateSearchLink(
-        //     $this->resourceGenerator->getLinkGenerator(),
-        //     $request
-        // ));
 
         return $this->responseFactory->createResponse($request, $resource);
 

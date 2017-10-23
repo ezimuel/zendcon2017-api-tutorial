@@ -7,7 +7,7 @@ use Zend\ConfigAggregator\PhpFileProvider;
 // To enable or disable caching, set the `ConfigAggregator::ENABLE_CACHE` boolean in
 // `config/autoload/local.php`.
 $cacheConfig = [
-    'config_cache_path' => 'data/config-cache.php',
+    'config_cache_path' => 'data/cache/config-cache.php',
 ];
 
 $aggregator = new ConfigAggregator([
@@ -15,11 +15,12 @@ $aggregator = new ConfigAggregator([
     \Zend\Filter\ConfigProvider::class,
     \Zend\Validator\ConfigProvider::class,
     \Zend\Hydrator\ConfigProvider::class,
+    \Zend\Expressive\Authentication\ConfigProvider::class,
     \Zend\Expressive\Hal\ConfigProvider::class,
     \Zend\ProblemDetails\ConfigProvider::class,
     \Zend\Paginator\ConfigProvider::class,
     \Book\ConfigProvider::class,
-    
+
     // Include cache configuration
     new ArrayProvider($cacheConfig),
 

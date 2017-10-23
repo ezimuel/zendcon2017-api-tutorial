@@ -2,11 +2,13 @@
 
 namespace Book;
 
+use Zend\Expressive\Authentication;
 use Zend\Expressive\Hal\Metadata\MetadataMap;
 use Zend\Expressive\Hal\Metadata\RouteBasedCollectionMetadata;
 use Zend\Expressive\Hal\Metadata\RouteBasedResourceMetadata;
 use Zend\Hydrator\ObjectProperty as ObjectPropertyHydrator;
 use Zend\ServiceManager\AbstractFactory\ReflectionBasedAbstractFactory;
+use Zend\ServiceManager\Factory\InvokableFactory;
 
 class ConfigProvider
 {
@@ -17,7 +19,8 @@ class ConfigProvider
             MetadataMap::class => $this->getHalMetadataMap(),
             'authentication'   => require __DIR__ . '/../config/authentication.php',
             'dependencies'     => $this->getDependencies(),
-            'database'         => require __DIR__ . '/../config/database.php'
+            'database'         => require __DIR__ . '/../config/database.php',
+            'input_filters'    => $this->getInputFilters()
         ];
     }
 
@@ -65,9 +68,13 @@ class ConfigProvider
      *
      * @return array
      */
-    public function getDependencies()
+    public function getDependencies(): array
     {
         return [
+            'aliases' => [
+                Authentication\AuthenticationInterface::class => Authentication\Adapter\BasicAccess::class,
+                Authentication\UserRepositoryInterface::class => Authentication\UserRepository\PdoDatabase::class
+            ],
             'factories'  => [
                 PdoService::class => PdoServiceFactory::class,
                 Model\BookModel::class => ReflectionBasedAbstractFactory::class,
@@ -75,8 +82,21 @@ class ConfigProvider
                 Action\AllBookAction::class => ReflectionBasedAbstractFactory::class,
                 Action\BookAction::class => ReflectionBasedAbstractFactory::class,
                 Action\AllReviewAction::class => ReflectionBasedAbstractFactory::class,
-                Action\ReviewAction::class => ReflectionBasedAbstractFactory::class
+                Action\ReviewAction::class => ReflectionBasedAbstractFactory::class,
+                Middleware\AddReviewValidationMiddleware::class => Middleware\ContentValidationMiddlewareFactory::class,
+                Action\AddReviewAction::class => ReflectionBasedAbstractFactory::class,
+                Middleware\UpdateReviewValidationMiddleware::class => Middleware\ContentValidationMiddlewareFactory::class,
+                Action\UpdateReviewAction::class => ReflectionBasedAbstractFactory::class
             ]
+        ];
+    }
+
+    public function getInputFilters(): array
+    {
+        return [
+            'factories' => [
+                InputFilter\Review::class => InvokableFactory::class,
+            ],
         ];
     }
 }

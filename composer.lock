@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "204fdc5c345cacd0f4e915e7c743dde7",
+    "content-hash": "545b3afd1e6ad4d3ec03e14289c41631",
     "packages": [
         {
             "name": "container-interop/container-interop",
@@ -888,16 +888,16 @@
         },
         {
             "name": "webimpress/composer-extra-dependency",
-            "version": "0.2.1",
+            "version": "0.2.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webimpress/composer-extra-dependency.git",
-                "reference": "8722031102594a494e4eef1221f8a1a32f82830a"
+                "reference": "31fa56391d30f03b1180c87610cbe22254780ad9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webimpress/composer-extra-dependency/zipball/8722031102594a494e4eef1221f8a1a32f82830a",
-                "reference": "8722031102594a494e4eef1221f8a1a32f82830a",
+                "url": "https://api.github.com/repos/webimpress/composer-extra-dependency/zipball/31fa56391d30f03b1180c87610cbe22254780ad9",
+                "reference": "31fa56391d30f03b1180c87610cbe22254780ad9",
                 "shasum": ""
             },
             "require": {
@@ -930,29 +930,29 @@
                 "dependency",
                 "webimpress"
             ],
-            "time": "2017-10-12T15:32:15+00:00"
+            "time": "2017-10-17T17:15:14+00:00"
         },
         {
             "name": "webimpress/http-middleware-compatibility",
-            "version": "0.1.3",
+            "version": "0.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webimpress/http-middleware-compatibility.git",
-                "reference": "5839f5abf54346eafa6617434bd5f618c0cc7adb"
+                "reference": "8ed1c2c7523dce0035b98bc4f3a73ca9cd1d3717"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webimpress/http-middleware-compatibility/zipball/5839f5abf54346eafa6617434bd5f618c0cc7adb",
-                "reference": "5839f5abf54346eafa6617434bd5f618c0cc7adb",
+                "url": "https://api.github.com/repos/webimpress/http-middleware-compatibility/zipball/8ed1c2c7523dce0035b98bc4f3a73ca9cd1d3717",
+                "reference": "8ed1c2c7523dce0035b98bc4f3a73ca9cd1d3717",
                 "shasum": ""
             },
             "require": {
                 "http-interop/http-middleware": "^0.1.1 || ^0.2 || ^0.3 || ^0.4.1 || ^0.5",
                 "php": "^5.6 || ^7.0",
-                "webimpress/composer-extra-dependency": "^0.2"
+                "webimpress/composer-extra-dependency": "^0.2.2"
             },
             "require-dev": {
-                "phpunit/phpunit": "^5.7.22 || ^6.3.1"
+                "phpunit/phpunit": "^5.7.23 || ^6.4.3"
             },
             "type": "library",
             "extra": {
@@ -976,7 +976,7 @@
                 "psr-15",
                 "webimpress"
             ],
-            "time": "2017-10-11T22:13:48+00:00"
+            "time": "2017-10-17T17:31:10+00:00"
         },
         {
             "name": "willdurand/negotiation",
@@ -1369,12 +1369,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ezimuel/zend-expressive-authentication.git",
-                "reference": "bb8d8a178da654ee30d99262f8a8bec66fc26703"
+                "reference": "48c1086ea07613f33d079beab37b779ab2f711df"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ezimuel/zend-expressive-authentication/zipball/bb8d8a178da654ee30d99262f8a8bec66fc26703",
-                "reference": "bb8d8a178da654ee30d99262f8a8bec66fc26703",
+                "url": "https://api.github.com/repos/ezimuel/zend-expressive-authentication/zipball/48c1086ea07613f33d079beab37b779ab2f711df",
+                "reference": "48c1086ea07613f33d079beab37b779ab2f711df",
                 "shasum": ""
             },
             "require": {
@@ -1447,7 +1447,7 @@
                 "slack": "https://zendframework-slack.herokuapp.com",
                 "forum": "https://discourse.zendframework.com/c/questions/expressive"
             },
-            "time": "2017-10-17 15:26:16"
+            "time": "2017-10-23 08:07:13"
         },
         {
             "name": "zendframework/zend-expressive-fastroute",
@@ -2325,99 +2325,41 @@
             "time": "2017-07-22T11:58:36+00:00"
         },
         {
-            "name": "filp/whoops",
-            "version": "2.1.12",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/filp/whoops.git",
-                "reference": "a99f0b151846021ba7a73b4e3cba3ebc9f14f03e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/filp/whoops/zipball/a99f0b151846021ba7a73b4e3cba3ebc9f14f03e",
-                "reference": "a99f0b151846021ba7a73b4e3cba3ebc9f14f03e",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.5.9 || ^7.0",
-                "psr/log": "^1.0.1"
-            },
-            "require-dev": {
-                "mockery/mockery": "0.9.*",
-                "phpunit/phpunit": "^4.8 || ^5.0",
-                "symfony/var-dumper": "^2.6 || ^3.0"
-            },
-            "suggest": {
-                "symfony/var-dumper": "Pretty print complex values better with var-dumper available",
-                "whoops/soap": "Formats errors as SOAP responses"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Whoops\\": "src/Whoops/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Filipe Dobreira",
-                    "homepage": "https://github.com/filp",
-                    "role": "Developer"
-                }
-            ],
-            "description": "php error handling for cool kids",
-            "homepage": "https://filp.github.io/whoops/",
-            "keywords": [
-                "error",
-                "exception",
-                "handling",
-                "library",
-                "throwable",
-                "whoops"
-            ],
-            "time": "2017-10-15T13:05:10+00:00"
-        },
-        {
             "name": "myclabs/deep-copy",
-            "version": "1.6.1",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/myclabs/DeepCopy.git",
-                "reference": "8e6e04167378abf1ddb4d3522d8755c5fd90d102"
+                "reference": "3b8a3a99ba1f6a3952ac2747d989303cbd6b7a3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/8e6e04167378abf1ddb4d3522d8755c5fd90d102",
-                "reference": "8e6e04167378abf1ddb4d3522d8755c5fd90d102",
+                "url": "https://api.github.com/repos/myclabs/DeepCopy/zipball/3b8a3a99ba1f6a3952ac2747d989303cbd6b7a3e",
+                "reference": "3b8a3a99ba1f6a3952ac2747d989303cbd6b7a3e",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.4.0"
+                "php": "^5.6 || ^7.0"
             },
             "require-dev": {
-                "doctrine/collections": "1.*",
-                "phpunit/phpunit": "~4.1"
+                "doctrine/collections": "^1.0",
+                "doctrine/common": "^2.6",
+                "phpunit/phpunit": "^4.1"
             },
             "type": "library",
             "autoload": {
                 "psr-4": {
                     "DeepCopy\\": "src/DeepCopy/"
-                }
+                },
+                "files": [
+                    "src/DeepCopy/deep_copy.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
             "description": "Create deep copies (clones) of your objects",
-            "homepage": "https://github.com/myclabs/DeepCopy",
             "keywords": [
                 "clone",
                 "copy",
@@ -2425,7 +2367,7 @@
                 "object",
                 "object graph"
             ],
-            "time": "2017-04-12T18:52:22+00:00"
+            "time": "2017-10-19T19:58:43+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -4090,16 +4032,16 @@
         },
         {
             "name": "zendframework/zend-code",
-            "version": "3.2.0",
+            "version": "3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/zendframework/zend-code.git",
-                "reference": "02944646c109fa53b6b6ab8b5269bb080fcdf5b4"
+                "reference": "6b1059db5b368db769e4392c6cb6cc139e56640d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/zendframework/zend-code/zipball/02944646c109fa53b6b6ab8b5269bb080fcdf5b4",
-                "reference": "02944646c109fa53b6b6ab8b5269bb080fcdf5b4",
+                "url": "https://api.github.com/repos/zendframework/zend-code/zipball/6b1059db5b368db769e4392c6cb6cc139e56640d",
+                "reference": "6b1059db5b368db769e4392c6cb6cc139e56640d",
                 "shasum": ""
             },
             "require": {
@@ -4139,7 +4081,7 @@
                 "code",
                 "zf2"
             ],
-            "time": "2017-07-23T13:06:00+00:00"
+            "time": "2017-10-20T15:21:32+00:00"
         },
         {
             "name": "zendframework/zend-eventmanager",

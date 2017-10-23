@@ -48,11 +48,6 @@ class BookAction implements MiddlewareInterface
             ['id' => $id] // route parameter subsitutions
         ));
 
-        // $resource = $resource->withLink($this->generateSearchLink(
-        //     $this->resourceGenerator->getLinkGenerator(),
-        //     $request
-        // ));
-
         return $this->responseFactory->createResponse($request, $resource);
     }
 }
